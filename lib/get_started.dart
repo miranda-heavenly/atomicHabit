@@ -14,7 +14,7 @@ class GetStarted extends StatelessWidget {
           Text(
             "JOIN A SUPPORTIVE COMMUNITY",
             style: TextStyle(
-                fontSize: 22,
+                fontSize: 38,
                 fontFamily: 'Klasik',
                 color: Color.fromRGBO(57, 33, 53, 1),
                 // fontWeight: FontWeight.bold,
@@ -38,7 +38,7 @@ class GetStarted extends StatelessWidget {
                         fontFamily: 'Manrope',
                         fontWeight: FontWeight.w700,
                         height: 1.5,
-                        fontSize: 12,
+                        fontSize: 22,
                       ),
                       children: [
                         TextSpan(
@@ -68,9 +68,12 @@ class GetStarted extends StatelessWidget {
                           children: [
                             Expanded(
                               child: ElevatedButton(
-                                onPressed: (){}, 
-                                child: Text("Get Started"),
+                                onPressed: (){
+                                  Navigator.pushNamed(context, '/signup',);
+                                }, 
+                                child: Text("Get Started", style: TextStyle(fontSize: 18, color: Colors.black),),
                                 style: ButtonStyle(
+                                  minimumSize:MaterialStatePropertyAll(Size.fromHeight(60)),
                                   backgroundColor: MaterialStateProperty.all(Color.fromARGB(255, 254, 169, 0)),
                                   shape: MaterialStateProperty.all(RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(5),

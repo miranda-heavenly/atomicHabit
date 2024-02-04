@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:onboarding_screen/get_started.dart';
+import 'package:onboarding_screen/home_page.dart';
 import 'package:onboarding_screen/intro_slider.dart';
 import 'package:onboarding_screen/login_page.dart';
-import 'package:onboarding_screen/my_home_page.dart';
+import 'package:onboarding_screen/reset_password.dart';
+import 'package:onboarding_screen/signup_page.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -17,7 +19,14 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: LoginPage(),
+      initialRoute: "/splash",
+      routes: <String, WidgetBuilder>{
+        "/login":(context) => const LoginPage(),
+        "/signup":(context) => const SignUpPage(),
+        "/home":(context) => const HomePage(),
+        "/splash":(context) => const IntroSlider(),
+        "/getstarted":(context) => const GetStarted()
+      }
     );
   }
 }

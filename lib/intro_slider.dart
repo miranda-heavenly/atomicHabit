@@ -3,7 +3,6 @@
 import 'package:flutter/material.dart';
 import 'package:introduction_slider/introduction_slider.dart';
 import 'package:onboarding_screen/get_started.dart';
-import 'package:onboarding_screen/my_home_page.dart';
 
 class IntroSlider extends StatefulWidget {
   const IntroSlider({super.key});
@@ -20,10 +19,13 @@ class _IntroSliderState extends State<IntroSlider> {
     IntroductionSliderItem(
       logo: Column(
         children: [
-         Text("WELCOME TO ATOMIC HABITS", 
-        style: TextStyle(fontSize: 38, color: Color.fromRGBO(57, 33, 53, 1), fontWeight: FontWeight.bold),
-                textAlign: TextAlign.center,   
-                ),
+         Padding(
+           padding: const EdgeInsets.symmetric(horizontal: 20),
+           child: Text("WELCOME TO ATOMIC HABITS", 
+                   style: TextStyle(fontSize: 38, color: Color.fromRGBO(57, 33, 53, 1), fontWeight: FontWeight.bold),
+                  textAlign: TextAlign.center,   
+                  ),
+         ),
           Image.asset('assets/intro1.png'),
         ],
       ),
@@ -36,7 +38,7 @@ class _IntroSliderState extends State<IntroSlider> {
                     fontFamily: 'Manrope',
                     fontWeight: FontWeight.w700,
                     height: 1.5,
-                    // fontSize: 24,
+                    fontSize: 22,
                   ),
                   children: [
                     TextSpan(text: 'WE ', style: TextStyle(color: Color.fromARGB(255, 87, 51, 83))),
@@ -52,10 +54,13 @@ class _IntroSliderState extends State<IntroSlider> {
     IntroductionSliderItem(
      logo: Column(
         children: [
-          Text("BUILD NEW HABITS EASILY", 
-        style: TextStyle(fontSize: 38, color:  Color.fromRGBO(57, 33, 53, 1), fontWeight: FontWeight.bold),
-                textAlign: TextAlign.center,   
-                ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: Text("BUILD NEW HABITS EASILY", 
+                    style: TextStyle(fontSize: 38, color:  Color.fromRGBO(57, 33, 53, 1), fontWeight: FontWeight.bold),
+                  textAlign: TextAlign.center,   
+                  ),
+          ),
           Container(
             height: 487,
             child: Image.asset('assets/intro2.png', fit: BoxFit.cover,)),
@@ -71,7 +76,7 @@ class _IntroSliderState extends State<IntroSlider> {
                     fontFamily: 'Manrope',
                     fontWeight: FontWeight.w700,
                     height: 1.5,
-                    // fontSize: 24,
+                    fontSize: 22,
                   ),
                   children: [
                     TextSpan(text: 'WE ', style: TextStyle(color: Color.fromARGB(255, 87, 51, 83))),
@@ -86,10 +91,13 @@ class _IntroSliderState extends State<IntroSlider> {
     IntroductionSliderItem(
       logo: Column(
         children: [
-          Text("KEEP TRACK OF YOUR PROGRESS", 
-        style: TextStyle(fontSize: 38, color: Color.fromRGBO(57, 33, 53, 1), fontWeight: FontWeight.bold),
-                textAlign: TextAlign.center,   
-                ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: Text("KEEP TRACK OF YOUR PROGRESS", 
+                    style: TextStyle(fontSize: 38, color: Color.fromRGBO(57, 33, 53, 1), fontWeight: FontWeight.bold),
+                  textAlign: TextAlign.center,   
+                  ),
+          ),
           Container(
             height: 487,
               child: Image.asset('assets/intro3.png', fit: BoxFit.cover,)),
@@ -105,7 +113,7 @@ class _IntroSliderState extends State<IntroSlider> {
                     fontFamily: 'Manrope',
                     fontWeight: FontWeight.w700,
                     height: 1.5,
-                    // fontSize: 24,
+                    fontSize: 22,
                   ),
                   children: [
                     TextSpan(text: 'WE ', style: TextStyle(color: Color.fromARGB(255, 87, 51, 83))),
