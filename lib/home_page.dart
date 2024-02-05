@@ -131,11 +131,14 @@ class _HomePageState extends State<HomePage> {
                 child: SingleChildScrollView(
                     scrollDirection: Axis.horizontal,
                     child: DataTable(
+                      
                       columns: [
                         //custom heading for the first column
                         DataColumn(
+                          
                           label: Column(
-                          mainAxisSize: MainAxisSize.min,
+                          mainAxisSize: MainAxisSize.min,    
+                                    
                           children: [
                             Text("Habits",
                             style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),)
@@ -147,24 +150,27 @@ class _HomePageState extends State<HomePage> {
                         //The map function iterates over each date in the dates list. For each date, it creates a new DataColumn object using the provided function.
                         //...dates.map((date) => DataColumn( ... )).toList():
                         ...dates.map((date) => DataColumn(
+                          
                           label: Container(
-                            width: 55,
-                            // height: 100,
-                            // padding: EdgeInsets.only(bottom: 10),
+                            width: 50,
                             margin: EdgeInsets.only(bottom: 5),
                             decoration: BoxDecoration(
                               color: Colors.white,
                               borderRadius: BorderRadius.circular(7)
                             ),
                             child:
-                              Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Text(DateFormat('EE').format(date), 
-                              style: TextStyle(fontSize: 12, color: Colors.grey),),
-                              Text(DateFormat('D').format(date),
-                              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),)
-                                ],
+                              Padding(
+                                padding: const EdgeInsets.symmetric(vertical: 3),
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.min,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Text(DateFormat('EE').format(date), 
+                                style: TextStyle(fontSize: 12, color: Colors.grey),),
+                                Text(DateFormat('D').format(date),
+                                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),)
+                                  ],
+                                ),
                               )
                             
                           )
@@ -176,9 +182,12 @@ class _HomePageState extends State<HomePage> {
                       //iterates over each habit in the habits list. For each habit, it creates a new DataRow object using the provided function.
                       rows: habits.map((habit) => 
                       
-                      DataRow(
+                      DataRow(  
                         cells: [
-                          DataCell(Text(habit)),
+                          DataCell(
+                            Text(habit),
+                            
+                            ),
                           ...dates.map((date) => DataCell(
                             Container(
                               width: 50,
@@ -192,10 +201,17 @@ class _HomePageState extends State<HomePage> {
                           //It uses indexOf to find the correct indices within the 2D list.
                         ])).toList(),
                         
-                        headingRowHeight: 50,
-                        border: TableBorder(borderRadius: BorderRadius.circular(30), bottom: BorderSide(color: Colors.transparent, width: 10, )),
+                        headingRowHeight: 60,    
                         dataRowColor: MaterialStatePropertyAll(Colors.white),
-                        
+                        dataRowHeight: 58,
+                        columnSpacing: 12,
+                       
+                       
+                       border: TableBorder(
+                        horizontalInside: BorderSide.none,
+                        verticalInside: BorderSide.none
+                       ),
+
                       ),
                   ),
               ),
@@ -244,6 +260,7 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: Color.fromARGB(255, 254, 169, 0),   
         elevation: 5,
         tooltip: "Add a habit",
+        shape: CircleBorder(),
         child: Icon(Icons.add),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
